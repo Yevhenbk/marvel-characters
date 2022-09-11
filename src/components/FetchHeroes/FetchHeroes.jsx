@@ -4,6 +4,7 @@ import axios from 'axios';
 import Card from '../Card/Card';
 import {DivStyled} from './FetchHeroes.Styled';
 
+
 //* Functions
 const getHash = (ts, secretKey, apiKey) => {
     return MD5(ts + secretKey + apiKey).toString()
@@ -30,7 +31,7 @@ const FetchHeroes = () => {
         const hash = getHash(ts, privateKey, apiKey)
 
         //* Define requests
-        const request_1 = `&limit=100&offset=0`
+        const request_1 = `&limit=50&offset=0`
         const request_2 = `&limit=100&offset=100`
         const request_3 = `&limit=100&offset=200`
         const request_4 = `&limit=100&offset=300`
@@ -51,8 +52,16 @@ const FetchHeroes = () => {
         //* View Builder
         return (
             <DivStyled>{characters.map((char) => (
-                <Card key={char.id} img={char.thumbnail.path + '.jpg'}  title={char.name} />
-            ))}</DivStyled>
+                <Card 
+                key={char.id} 
+                img={char.thumbnail.path + '.jpg'}  
+                title={char.name} 
+                onError={event => {
+                    event.target.src = "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"
+                    event.onerror = null
+                }}/>
+            ))}
+            </DivStyled>
         )
 }
 

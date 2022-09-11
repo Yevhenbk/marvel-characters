@@ -4,4 +4,12 @@ body {
   margin: 0;
   scroll-behavior: smooth;
   font-family: 'Roboto', sans-serif;
+  width: 100%;
+}
+::-webkit-scrollbar {
+  width: 8px;
+  background: #151515;
+}
+::-webkit-scrollbar-thumb {
+  background: #E62429;
 }

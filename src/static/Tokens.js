@@ -2,9 +2,11 @@
 export const Tokens = {
     Colors: {
         Primary: '#FFFFFF',
-        Secondary:'#E9E7E6',
+        Secondary:'#272727',
         Teritary: '#E62429',
         Quaternary: '#151515',
+        Quinary:'#bbb',
+        Hover: '#a81c21',
     },
     Text: {
 
