@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import MD5 from 'crypto-js/md5'
 import axios from 'axios';
 import Card from '../Card/Card';
-import {DivStyled} from './FetchCharactersStyled';
+import SearchBar from '../SearchBar/SearchBar';
+import { DivStyled, OptionStyled, SectionStyled, SelectStyled, SpanStyled } from './FetchCharactersStyled';
 
 
 
@@ -71,11 +72,16 @@ const FetchCharacters = ({value}) => {
         //* View Builder
         return (
             <>
-            <select defaultValue={'DEFAULT'} onChange={(e) => setOrder(e.target.value)}>
-                <option value="DEFAULT" disabled>None</option>
-                <option value="ascending">Ascending</option>
-                <option value="descending">Descending</option>
-            </select>
+            <SectionStyled>
+                <div>
+                    <SpanStyled>Order</SpanStyled>
+                    <SelectStyled defaultValue={'ascendic'} onChange={(e) => setOrder(e.target.value)}>
+                        <OptionStyled value="ascending">Ascending A - Z</OptionStyled>
+                        <OptionStyled value="descending">Descending Z - A</OptionStyled>
+                    </SelectStyled>  
+                </div>
+                <SearchBar />
+            </SectionStyled>
             <DivStyled>{characters.sort(sortMethods[order].method).map((char) => (
                 <Card 
                 key={char.id} 
