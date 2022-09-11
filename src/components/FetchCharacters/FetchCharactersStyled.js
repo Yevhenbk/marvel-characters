@@ -3,7 +3,7 @@ import { Tokens } from '../../static/Tokens';
 
 
 
-//* Styled FetchedHeroes
+//* Styled Listing
 export const DivStyled = styled.div`
   --grid-layout-gap: .25rem;
   --grid-column-count: 5;
@@ -16,5 +16,8 @@ export const DivStyled = styled.div`
   justify-items: center;
   grid-template-columns: repeat(auto-fill, minmax(max(var(--grid-item--min-width), var(--grid-item--max-width)), 1fr));
   grid-gap: var(--total-gap-width);
-  background: ${Tokens.Colors.Secondary}
+  background: ${Tokens.Colors.Secondary};
+  width: 90vw;
+  position: relative;
+  right: -5vw;
 `;

@@ -1,9 +1,9 @@
-import FetchHeroes from '../components/FetchHeroes/FetchHeroes';
+import FetchCharacters from '../components/FetchCharacters/FetchCharacters';
 
 function App() {
   return (
     <div className="App">
-      <FetchHeroes />
+      <FetchCharacters />
     </div>
   );
 }
