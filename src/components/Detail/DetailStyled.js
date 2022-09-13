@@ -32,6 +32,7 @@ export const DetailsCardStyled = styled.div`
     max-height: 100%;
     min-height: 70vh;
     position: relative;
+    filter: drop-shadow(0 0 0.05rem ${Tokens.Colors.Quinary});
     background: ${Tokens.Colors.Quaternary};
     &::-webkit-scrollbar {
         display: none; /* for Chrome, Safari, and Opera */

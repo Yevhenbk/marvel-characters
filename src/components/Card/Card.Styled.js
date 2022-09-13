@@ -67,9 +67,10 @@ export const ButtonStyled = styled.button`
     background: ${Tokens.Colors.Teritary};
     color: ${Tokens.Colors.Primary};
     font-size: 14px;
+    border: none;
     font-style: italic;
     font-weight: 400;
-    padding: .5rem 2.75rem;
+    padding: .6rem 2.75rem;
     text-align: right;
     clip-path: polygon(
       100% 0,

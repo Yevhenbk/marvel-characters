@@ -3,7 +3,6 @@ import MD5 from 'crypto-js/md5'
 import axios from 'axios';
 import Card from '../Card/Card';
 import SearchBar from '../SearchBar/SearchBar';
-import Detail from '../Detail/Detail';
 import { DivStyled, OptionStyled, SectionStyled, SelectStyled, SpanStyled } from './FetchCharactersStyled';
 
 
@@ -64,9 +63,9 @@ const FetchCharacters = () => {
         const request_9 = `&limit=100&offset=800`
         const request_10 = `&limit=100&offset=900`
         
-        axios.get(`${baseUrl}?ts=${ts}&apikey=${apiKey}&hash=${hash}${request_1}`).then(res => {
+        axios.get(`${baseUrl}?ts=${ts}&apikey=${apiKey}&hash=${hash}${request_7}`).then(res => {
             setCharacters(res.data.data.results)
-            console.log(res.data.data.results)
+            // console.log(res.data.data.results)
         }).catch(error => console.log(error))
         }, [])
 
@@ -82,7 +81,7 @@ const FetchCharacters = () => {
                         <OptionStyled value="descending">Descending Z - A</OptionStyled>
                     </SelectStyled>  
                 </div>
-                <SearchBar onChange={(e) => setQuery(e.target.value)}/>
+                <SearchBar onChange={(e) => setQuery(e.target.value.toLowerCase())}/>
             </SectionStyled>
             <DivStyled>{characters.filter(char => char.name.toLowerCase().includes(query))
             .sort(sortMethods[order].method).map((char) => (
@@ -98,7 +97,8 @@ const FetchCharacters = () => {
                 detailName={char.name}
                 detailDescription={char.description}
                 detailResource={char.resourceURI}
-                detailComics={char.comics.collectionURI} />
+                detailComics={char.comics.collectionURI}
+                />
             ))}
             </DivStyled>
             </>

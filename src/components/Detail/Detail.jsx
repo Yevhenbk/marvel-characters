@@ -1,10 +1,19 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import { AiOutlineClose } from 'react-icons/ai'
 import { DetailsCardStyled, DetailsStyled, ImgStyled, HeaderStyled,
 ParStyled, LinkStyled, DivStyled, ButtonStyled } from './DetailStyled'
 
+
+
+/**
+ * ! Define the Detail component
+ */
+
+
 const Detail = ({onClick, img, comics, description, resource, name, onError}) => {
 
+  //* View Builder
   return (
     <DetailsStyled >
       <DetailsCardStyled>
@@ -32,4 +41,16 @@ const Detail = ({onClick, img, comics, description, resource, name, onError}) =>
   )
 }
 
+//* Define components PropTypes
+Detail.propTypes = {
+  onClick: PropTypes.func,
+  img: PropTypes.string,
+  comics: PropTypes.string,
+  description: PropTypes.string,
+  resource: PropTypes.string,
+  name: PropTypes.string,
+  onError: PropTypes.func
+}
+
+//* Export component
 export default Detail

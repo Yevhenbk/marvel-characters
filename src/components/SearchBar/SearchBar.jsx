@@ -2,6 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { ButtonStyled, FormStyled, SearchStyled } from './SearchBarStyled'
 
+
+
 /**
  * ! Define the SearchBar component
  */
@@ -13,7 +15,7 @@ const SearchBar = ({onChange}) =>{
     return (
         <FormStyled>
             <SearchStyled placeholder='Hulk, Spider-Man, ...' type="search" onChange={onChange}/>
-            <ButtonStyled>Search</ButtonStyled>
+            <ButtonStyled type='submit'>Search</ButtonStyled>
         </FormStyled>
     )
 }
