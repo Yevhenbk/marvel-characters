@@ -38,6 +38,12 @@ export const SearchStyled = styled.input`
     &::placeholder {
         font-style: italic;
     }
+    &:active {
+        color: ${Tokens.Colors.Primary}
+    }
+    &:focus {
+        color: ${Tokens.Colors.Primary}
+    }
 `;
 
 
