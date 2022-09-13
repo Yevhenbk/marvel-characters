@@ -46,8 +46,8 @@ export const SelectStyled = styled.select`
   background-color: transparent;
   border: none;
   margin: 0;
-  width: 18rem;
-  font-size: 28px;
+  width: 14rem;
+  font-size: 21px;
   color: ${Tokens.Colors.Quinary};
   cursor: pointer;
   outline: none;
@@ -63,7 +63,7 @@ export const OptionStyled = styled.option`
 
 //* Styled Span
 export const SpanStyled = styled.span`
-  font-size: 21px;
+  font-size: 18px;
   padding-right: 1rem;
   font-weight: bold;
   font-style: italic;

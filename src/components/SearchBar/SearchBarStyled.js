@@ -29,11 +29,11 @@ export const SearchStyled = styled.input`
     font-size: 18px;
     outline: none;
     background: ${Tokens.Colors.Quaternary};
-    height: 46.6px;
+    height: 48.6px;
     border: none;
     padding-left: 1rem;
     width: 246.74px;
-    filter: drop-shadow(0 0 0.05rem ${Tokens.Colors.Quinary});
+    // filter: drop-shadow(0 0 0.05rem ${Tokens.Colors.Quinary});
     // border-bottom: 2px solid ${Tokens.Colors.Teritary};
     &::placeholder {
         font-style: italic;

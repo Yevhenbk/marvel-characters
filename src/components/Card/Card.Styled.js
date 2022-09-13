@@ -5,7 +5,7 @@ import { Tokens } from '../../static/Tokens';
 
 //* Styled Div
 export const DivStyled = styled.div`
-  filter: drop-shadow(0 0 0.05rem ${Tokens.Colors.Quinary});
+  // filter: drop-shadow(0 0 0.05rem ${Tokens.Colors.Quinary});
 `;
 
 
