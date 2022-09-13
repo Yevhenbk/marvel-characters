@@ -14,3 +14,9 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #E62429;
 }
+.no-scroll {
+  overflow: hidden !important;
+}
+.scroll {
+  overflow-y: scroll;
+}

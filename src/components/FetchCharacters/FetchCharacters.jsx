@@ -3,6 +3,7 @@ import MD5 from 'crypto-js/md5'
 import axios from 'axios';
 import Card from '../Card/Card';
 import SearchBar from '../SearchBar/SearchBar';
+import Detail from '../Detail/Detail';
 import { DivStyled, OptionStyled, SectionStyled, SelectStyled, SpanStyled } from './FetchCharactersStyled';
 
 
@@ -12,11 +13,12 @@ import { DivStyled, OptionStyled, SectionStyled, SelectStyled, SpanStyled } from
  */
 
 
-const FetchCharacters = ({value}) => {
+const FetchCharacters = () => {
 
     // Defining states
     const [characters, setCharacters] = useState([])
     const [order, setOrder] = useState('none')
+    const [query, setQuery ] = useState("")
 
     //* Methods
 
@@ -64,7 +66,7 @@ const FetchCharacters = ({value}) => {
         
         axios.get(`${baseUrl}?ts=${ts}&apikey=${apiKey}&hash=${hash}${request_1}`).then(res => {
             setCharacters(res.data.data.results)
-            console.log(characters) 
+            console.log(res.data.data.results)
         }).catch(error => console.log(error))
         }, [])
 
@@ -80,9 +82,10 @@ const FetchCharacters = ({value}) => {
                         <OptionStyled value="descending">Descending Z - A</OptionStyled>
                     </SelectStyled>  
                 </div>
-                <SearchBar />
+                <SearchBar onChange={(e) => setQuery(e.target.value)}/>
             </SectionStyled>
-            <DivStyled>{characters.sort(sortMethods[order].method).map((char) => (
+            <DivStyled>{characters.filter(char => char.name.toLowerCase().includes(query))
+            .sort(sortMethods[order].method).map((char) => (
                 <Card 
                 key={char.id} 
                 img={char.thumbnail.path + '.jpg'}  
@@ -90,7 +93,12 @@ const FetchCharacters = ({value}) => {
                 onError={event => {
                     event.target.src = "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"
                     event.onerror = null
-                }}/>
+                }}
+                detailImg={char.thumbnail.path + '.jpg'}
+                detailName={char.name}
+                detailDescription={char.description}
+                detailResource={char.resourceURI}
+                detailComics={char.comics.collectionURI} />
             ))}
             </DivStyled>
             </>

@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import PropTypes from 'prop-types'
+import Detail from '../Detail/Detail'
 import { DivStyled, ImgStyled, TitleStyled, CardStyled, ButtonStyled, WrapperStyled } from './Card.Styled'
+
 
 
 /**
@@ -8,10 +10,23 @@ import { DivStyled, ImgStyled, TitleStyled, CardStyled, ButtonStyled, WrapperSty
  */
 
 
-const Card = ({img, title, onError, onClick}) => {
+const Card = ({img, title, onError, onClick, detailImg, detailName, detailComics, 
+detailDescription, detailOnClick, detailResource}) => {
+
+  // Defining states
+  const [isOpen, setIsOpen ] = useState(false)
+
+  //* Methods
+  if (isOpen == true) {
+    document.body.classList.add("no-scroll")
+  } else {
+    document.body.classList.remove("no-scroll")
+    document.body.classList.add("scroll")
+  }
 
   //* View Builder
   return (
+    <>
     <DivStyled>
         <CardStyled>
           <ImgStyled 
@@ -20,10 +35,21 @@ const Card = ({img, title, onError, onClick}) => {
           onError={onError}/>
           <WrapperStyled>
             <TitleStyled>{title}</TitleStyled>
-            <ButtonStyled onClick={onClick}>Learn more</ButtonStyled>
+            <ButtonStyled onClick={() => setIsOpen(true)}>Learn more</ButtonStyled>
           </WrapperStyled>
         </CardStyled>
     </DivStyled>
+    {isOpen ? 
+      <Detail 
+      img={detailImg}
+      name={detailName}
+      description={detailDescription}
+      comics={detailComics}
+      resource={detailResource}
+      onClick={() => setIsOpen(false)}/> 
+      : <></>
+    }
+    </>
   )
 }
 
@@ -32,7 +58,12 @@ Card.propTypes = {
   img: PropTypes.string,
   title: PropTypes.string,
   onError: PropTypes.func,
-  onClick: PropTypes.func
+  onClick: PropTypes.func,
+  detailImg: PropTypes.string,
+  detailName: PropTypes.string,
+  detailComics: PropTypes.string,
+  detailDescription: PropTypes.string,
+  detailResource: PropTypes.string
 };
 
 //* Export component

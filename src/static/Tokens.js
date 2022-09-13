@@ -7,6 +7,7 @@ export const Tokens = {
         Quaternary: '#151515',
         Quinary:'#bbb',
         Hover: '#a81c21',
+        Link: '#2b5bf9',
     },
     Text: {
 

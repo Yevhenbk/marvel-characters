@@ -1,5 +1,6 @@
 import FetchCharacters from '../components/FetchCharacters/FetchCharacters';
 
+
 function App() {
   return (
     <div className="App">

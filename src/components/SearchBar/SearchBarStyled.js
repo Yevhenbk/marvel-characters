@@ -28,11 +28,13 @@ export const ButtonStyled = styled.button`
 export const SearchStyled = styled.input`
     font-size: 18px;
     outline: none;
-    background: transparent;
-    height: 48.6px;
+    background: ${Tokens.Colors.Quaternary};
+    height: 46.6px;
     border: none;
+    padding-left: 1rem;
     width: 246.74px;
-    border-bottom: 2px solid ${Tokens.Colors.Teritary};
+    filter: drop-shadow(0 0 0.05rem ${Tokens.Colors.Quinary});
+    // border-bottom: 2px solid ${Tokens.Colors.Teritary};
     &::placeholder {
         font-style: italic;
     }
