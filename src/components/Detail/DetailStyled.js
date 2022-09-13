@@ -94,7 +94,7 @@ export const ButtonStyled = styled.button`
     border: none;
     position: absolute;
     top: .5rem;
-    right: .5rem;
+    right: .35rem;
     &:hover {
         color: ${Tokens.Colors.Hover};
         cursor: pointer;
