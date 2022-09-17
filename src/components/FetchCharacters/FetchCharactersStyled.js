@@ -1,6 +1,27 @@
 import styled from 'styled-components';
+import { AiOutlineSearch } from 'react-icons/ai';
+import { AiOutlineClose } from 'react-icons/ai';
 import { Tokens } from '../../static/Tokens';
 
+
+
+//* Styled SearchIcon
+export const SearchIcon = styled(AiOutlineSearch)`
+  color: ${Tokens.Colors.Primary};
+  font-size: 28px;
+  padding-right: 1rem;
+`;
+
+
+//* Styled CloseIcon
+export const CloseIcon = styled(AiOutlineClose)`
+  color: ${Tokens.Colors.Primary};
+  font-size: 24px;
+  padding-right: 1rem;
+  &:hover {
+    cursor: pointer;
+  }
+`;
 
 
 //* Styled Div

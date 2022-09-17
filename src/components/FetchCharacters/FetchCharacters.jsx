@@ -3,7 +3,7 @@ import MD5 from 'crypto-js/md5'
 import axios from 'axios';
 import Card from '../Card/Card';
 import SearchBar from '../SearchBar/SearchBar';
-import { DivStyled, OptionStyled, SectionStyled, SelectStyled, SpanStyled } from './FetchCharactersStyled';
+import { DivStyled, OptionStyled, SectionStyled, SelectStyled, SpanStyled, SearchIcon, CloseIcon } from './FetchCharactersStyled';
 
 
 
@@ -43,7 +43,7 @@ const FetchCharacters = () => {
 
     useEffect( () => {
 
-        //* Fetch Props
+        // Fetch Props
         const API_URL = process.env.REACT_APP_BASE_URL;
         const baseUrl = `${API_URL}/v1/public/characters`
         const ts = Date.now().toString()
@@ -51,7 +51,7 @@ const FetchCharacters = () => {
         const privateKey = process.env.REACT_APP_PRIVATE_KEY
         const hash = getHash(ts, privateKey, apiKey)
 
-        //* Define requests
+        // Define requests
         const request_1 = `&limit=100&offset=0`
         const request_2 = `&limit=100&offset=100`
         const request_3 = `&limit=100&offset=200`
@@ -81,7 +81,9 @@ const FetchCharacters = () => {
                         <OptionStyled value="descending">Descending Z - A</OptionStyled>
                     </SelectStyled>  
                 </div>
-                <SearchBar onChange={(e) => setQuery(e.target.value.toLowerCase())}/>
+                <SearchBar placeholder="Search by hero name..." value={query} onChange={(e) => setQuery(e.target.value.toLowerCase())}>
+                    {query.length === 0 ? <SearchIcon/> : <CloseIcon onClick={() => setQuery("")} />}
+                </SearchBar>
             </SectionStyled>
             <DivStyled>{characters.filter(char => char.name.toLowerCase().includes(query))
             .sort(sortMethods[order].method).map((char) => (
@@ -97,6 +99,10 @@ const FetchCharacters = () => {
                 detailName={char.name}
                 detailDescription={char.description}
                 detailResource={char.resourceURI}
+                detailOnError={event => {
+                    event.target.src = "http://i.annihil.us/u/prod/marvel/i/mg/b/40/image_not_available.jpg"
+                    event.onerror = null
+                }}
                 detailComics={char.comics.collectionURI}
                 />
             ))}

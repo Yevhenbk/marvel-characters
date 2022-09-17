@@ -11,7 +11,7 @@ import { DivStyled, ImgStyled, TitleStyled, CardStyled, ButtonStyled, WrapperSty
 
 
 const Card = ({img, title, onError, detailImg, detailName, detailComics, 
-detailDescription, detailResource}) => {
+detailDescription, detailResource, detailOnError}) => {
 
   // Defining states
   const [isOpen, setIsOpen ] = useState(false)
@@ -46,6 +46,7 @@ detailDescription, detailResource}) => {
       description={detailDescription}
       comics={detailComics}
       resource={detailResource}
+      onError={detailOnError}
       onClick={() => setIsOpen(false)}/> 
       : <></>
     }
@@ -62,7 +63,8 @@ Card.propTypes = {
   detailName: PropTypes.string,
   detailComics: PropTypes.string,
   detailDescription: PropTypes.string,
-  detailResource: PropTypes.string
+  detailResource: PropTypes.string,
+  detailOnError: PropTypes.func
 }
 
 //* Export component
