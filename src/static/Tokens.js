@@ -13,9 +13,22 @@ export const Tokens = {
 
     },
     Typography: {
-        FontFamily: {
-
+        H1: {
+            FontSize: '21px',
+            FontWeight: '500',
         },
+        H2: {
+            FontSize: '21px',
+            FontWeight: '500',
+        },
+        P: {
+            FontSize: '18px',
+            FontWeight: '500',
+        },
+        Span: {
+            FontSize: '18px',
+            FontWeight: '500',
+        }
     }     
 
 }

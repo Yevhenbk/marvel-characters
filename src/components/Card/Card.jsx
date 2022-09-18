@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import Detail from '../Detail/Detail'
-import { DivStyled, ImgStyled, TitleStyled, CardStyled, ButtonStyled, WrapperStyled } from './Card.Styled'
+import { DivStyled, ImgStyled, TitleStyled, CardStyled, ButtonStyled, WrapperStyled } from './CardStyled'
 
 
 

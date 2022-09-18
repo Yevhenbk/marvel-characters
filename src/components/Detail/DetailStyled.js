@@ -1,6 +1,27 @@
 import styled from "styled-components";
+import { AiOutlineClose } from 'react-icons/ai';
 import { Tokens } from "../../static/Tokens";
 
+
+
+//* Styled CloseIcon
+export const CloseIcon = styled(AiOutlineClose)`
+    color: ${Tokens.Colors.Primary};
+    padding-right: 1rem;
+    font-size: 28px;
+    padding: .5rem;
+    margin: 0;
+    color: ${Tokens.Colors.Teritary};
+    background: ${Tokens.Colors.Quaternary};
+    border: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    &:hover {
+        cursor: pointer;
+        color: ${Tokens.Colors.Hover}
+    }
+`;
 
 
 //* Styled Details
@@ -83,21 +104,3 @@ export const LinkStyled = styled.a`
         cursor: pointer;
     }
 `;
-
-
-//* Styled Button
-export const ButtonStyled = styled.button`
-    color: ${Tokens.Colors.Teritary};
-    font-size: 28px;
-    padding: ;
-    margin: 0;
-    background: ${Tokens.Colors.Quaternary};
-    border: none;
-    position: absolute;
-    top: .5rem;
-    right: .35rem;
-    &:hover {
-        color: ${Tokens.Colors.Hover};
-        cursor: pointer;
-    }
-`

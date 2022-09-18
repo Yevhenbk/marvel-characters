@@ -5,6 +5,63 @@ import { Tokens } from '../../static/Tokens';
 
 
 
+//* Styled CenteredDiv
+export const CenteredDivStyled = styled.div`
+  width: 100%;
+  height: calc(100vh - 250px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+
+//* Styled Loader
+export const LoaderStyled = styled.div`
+  margin: 5rem auto;
+  font-size: 1rem;
+  position: relative;
+  text-indent: -9999rem;
+  border-top: .5rem solid rgba(255, 255, 255, 0.2);
+  border-right: .5rem solid rgba(255, 255, 255, 0.2);
+  border-bottom: .5rem solid rgba(255, 255, 255, 0.2);
+  border-left: .5rem solid ${Tokens.Colors.Teritary};
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation: load8 1.1s infinite linear;
+  animation: load8 1.1s infinite linear;
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem;
+}
+&:after {
+  border-radius: 50%;
+  width: 5rem;
+  height: 5rem;
+}
+@-webkit-keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@keyframes load8 {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+`;
+
+
 //* Styled SearchIcon
 export const SearchIcon = styled(AiOutlineSearch)`
   color: ${Tokens.Colors.Primary};
@@ -41,6 +98,7 @@ export const DivStyled = styled.div`
   width: 90vw;
   position: relative;
   right: -5vw;
+  margin-bottom: 3rem;
 `;
 
 

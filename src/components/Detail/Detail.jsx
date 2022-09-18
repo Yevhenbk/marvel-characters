@@ -1,8 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { AiOutlineClose } from 'react-icons/ai'
 import { DetailsCardStyled, DetailsStyled, ImgStyled, HeaderStyled,
-ParStyled, LinkStyled, DivStyled, ButtonStyled } from './DetailStyled'
+ParStyled, LinkStyled, DivStyled, CloseIcon } from './DetailStyled'
 
 
 
@@ -35,7 +34,7 @@ const Detail = ({onClick, img, comics, description, resource, name, onError}) =>
               <LinkStyled href={resource} target='_blank'>{comics}</LinkStyled>
             </div> 
           </DivStyled>
-          <ButtonStyled onClick={onClick}>< AiOutlineClose /></ButtonStyled>
+          <CloseIcon onClick={onClick} />
       </DetailsCardStyled>
     </DetailsStyled>
   )

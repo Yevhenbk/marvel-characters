@@ -3,7 +3,9 @@ import MD5 from 'crypto-js/md5'
 import axios from 'axios';
 import Card from '../Card/Card';
 import SearchBar from '../SearchBar/SearchBar';
-import { DivStyled, OptionStyled, SectionStyled, SelectStyled, SpanStyled, SearchIcon, CloseIcon } from './FetchCharactersStyled';
+import Modal from '../Modal/Modal';
+import { DivStyled, OptionStyled, SectionStyled, SelectStyled, SpanStyled, SearchIcon, CloseIcon, 
+    LoaderStyled, CenteredDivStyled } from './FetchCharactersStyled';
 
 
 
@@ -16,8 +18,10 @@ const FetchCharacters = () => {
 
     // Defining states
     const [characters, setCharacters] = useState([])
+    const [loading, setLoading] = useState(false)
     const [order, setOrder] = useState('none')
-    const [query, setQuery ] = useState("")
+    const [query, setQuery] = useState('')
+    const [show, setShow] = useState(false)
 
     //* Methods
 
@@ -50,22 +54,25 @@ const FetchCharacters = () => {
         const apiKey = process.env.REACT_APP_PUBLIC_KEY
         const privateKey = process.env.REACT_APP_PRIVATE_KEY
         const hash = getHash(ts, privateKey, apiKey)
-
-        // Define requests
-        const request_1 = `&limit=100&offset=0`
-        const request_2 = `&limit=100&offset=100`
-        const request_3 = `&limit=100&offset=200`
-        const request_4 = `&limit=100&offset=300`
-        const request_5 = `&limit=100&offset=400`
-        const request_6 = `&limit=100&offset=500`
-        const request_7 = `&limit=100&offset=600`
-        const request_8 = `&limit=100&offset=700`
-        const request_9 = `&limit=100&offset=800`
-        const request_10 = `&limit=100&offset=900`
         
-        axios.get(`${baseUrl}?ts=${ts}&apikey=${apiKey}&hash=${hash}${request_7}`).then(res => {
+        // Define requests
+        const request_1 = 0
+        const request_2 = 100
+        const request_3 = 200
+        const request_4 = 300
+        const request_5 = 400
+        const request_6 = 500
+        const request_7 = 600
+        const request_8 = 700
+        const request_9 = 800
+        const request_10 = 900
+        
+        setLoading(true)
+        axios.get(`${baseUrl}?ts=${ts}&apikey=${apiKey}&hash=${hash}&limit=100&offset=${request_6}`).then(res => {
             setCharacters(res.data.data.results)
-            // console.log(res.data.data.results)
+            setLoading(false)
+            setTimeout(() => {setShow(true)}, 1000) 
+            console.log(res.data.data.results)
         }).catch(error => console.log(error))
         }, [])
 
@@ -73,9 +80,10 @@ const FetchCharacters = () => {
         //* View Builder
         return (
             <>
+            {show ? <Modal /> : <></>}
             <SectionStyled>
                 <div>
-                    <SpanStyled>Order</SpanStyled>
+                    <SpanStyled>Order</SpanStyled>                    
                     <SelectStyled defaultValue={'ascendic'} onChange={(e) => setOrder(e.target.value)}>
                         <OptionStyled value="ascending">Ascending A - Z</OptionStyled>
                         <OptionStyled value="descending">Descending Z - A</OptionStyled>
@@ -85,6 +93,7 @@ const FetchCharacters = () => {
                     {query.length === 0 ? <SearchIcon/> : <CloseIcon onClick={() => setQuery("")} />}
                 </SearchBar>
             </SectionStyled>
+            {!loading ? 
             <DivStyled>{characters.filter(char => char.name.toLowerCase().includes(query))
             .sort(sortMethods[order].method).map((char) => (
                 <Card 
@@ -107,6 +116,11 @@ const FetchCharacters = () => {
                 />
             ))}
             </DivStyled>
+            :
+            <CenteredDivStyled>
+                <LoaderStyled />
+            </CenteredDivStyled>
+            }
             </>
         )
 }
