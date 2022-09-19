@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { DetailsCardStyled, DetailsStyled, ImgStyled, HeaderStyled,
-ParStyled, LinkStyled, DivStyled, CloseIcon } from './DetailStyled'
+ParStyled, LinkStyled, CloseIcon, DivStyled } from './DetailStyled'
 
 
 
@@ -21,19 +21,19 @@ const Detail = ({onClick, img, comics, description, resource, name, onError}) =>
           alt='Heroe image' 
           onError={onError}/>
           <HeaderStyled>{name}</HeaderStyled>
-          <DivStyled>
-            <div>
+          <div>
+            <DivStyled>
               <ParStyled>{description}</ParStyled>
-            </div>
-            <div>
+            </DivStyled>
+            <DivStyled>
               <ParStyled>Resourse:</ParStyled>
               <LinkStyled href={resource} target='_blank'>{resource}</LinkStyled>
-            </div>
-            <div>
+            </DivStyled>
+            <DivStyled>
               <ParStyled>Comics:</ParStyled>
               <LinkStyled href={resource} target='_blank'>{comics}</LinkStyled>
-            </div> 
-          </DivStyled>
+            </DivStyled> 
+          </div>
           <CloseIcon onClick={onClick} />
       </DetailsCardStyled>
     </DetailsStyled>

@@ -2,6 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { ModalStyled, WrapperStyled, HeaderStyled, ParStyled, ButtonStyled } from './ModalStyled'
 
 
+
+/**
+ * ! Define the Modal component
+ */
+
+
 function Modal() {
 
   // Defining states
@@ -9,6 +15,8 @@ function Modal() {
 
   //* Methods
   useEffect(() => {
+    // Setting isClosed to true onload in order to make
+    // the function below to work
     setIsClosed(true)
   }, [])
 
@@ -44,4 +52,5 @@ function Modal() {
   )
 }
 
+//* Export component
 export default Modal

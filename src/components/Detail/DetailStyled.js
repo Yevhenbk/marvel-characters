@@ -49,15 +49,17 @@ export const DetailsCardStyled = styled.div`
     overflow-y: scroll;
     padding: .5rem .5rem 1.5rem;
     max-width: 30rem;
-    min-width: 8rem;
     max-height: 100%;
     min-height: 40rem;
     position: relative;
-    // filter: drop-shadow(0 0 0.05rem ${Tokens.Colors.Quinary});
     background: ${Tokens.Colors.Quaternary};
     &::-webkit-scrollbar {
         display: none; /* for Chrome, Safari, and Opera */
         -webkit-appearance: none;
+    }
+
+    @media screen and (max-width: 550px) {
+        width: 20rem;
     }
 `;
 
@@ -67,6 +69,10 @@ export const ImgStyled = styled.img`
     width: 100%;
     height: 20rem;
     object-fit: cover;
+
+    @media screen and (max-width: 550px) {
+        width: 20rem;
+    }
 `;
 
 
@@ -91,7 +97,13 @@ export const ParStyled = styled.p`
 
 //* Styled Div
 export const DivStyled = styled.div`
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+    @media screen and (max-width: 550px) {
+        width: 20rem;
+    }
 `;
 
 
@@ -102,5 +114,11 @@ export const LinkStyled = styled.a`
     &:hover {
         text-decoration: underline;
         cursor: pointer;
+    }
+
+    @media screen and (max-width: 550px) {
+        max-width: 18rem;
+        display: block;
+        overflow: hidden;
     }
 `;

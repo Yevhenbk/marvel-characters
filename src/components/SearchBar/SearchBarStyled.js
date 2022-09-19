@@ -15,8 +15,6 @@ export const SearchStyled = styled.input`
     border-radius: 2px 0 0 2px;
     padding-left: 1rem;
     width: 246.74px;
-    // filter: drop-shadow(0 0 0.05rem ${Tokens.Colors.Quinary});
-    // border-bottom: 2px solid ${Tokens.Colors.Teritary};
     &::placeholder {
         font-style: italic;
         color: ${Tokens.Colors.Quinary};
