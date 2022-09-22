@@ -17,7 +17,17 @@ detailDescription, detailResource, detailOnError}) => {
   const [isOpen, setIsOpen ] = useState(false)
 
   //* Methods
-  if (isOpen == true) {
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    const detail = document.getElementById('detail')
+
+    if (event.target === detail) {
+      setIsOpen(false)
+    }
+  }
+
+  if (isOpen === true) {
     document.body.classList.add("no-scroll")
   } else {
     document.body.classList.remove("no-scroll")
@@ -41,6 +51,9 @@ detailDescription, detailResource, detailOnError}) => {
     </DivStyled>
     {isOpen ? 
       <Detail 
+      id='detail'
+      detailClassName={isOpen ? 'show' : 'closed'}
+      cardClassName={isOpen ? 'wrapper-show' : 'wrapper-closed'}
       img={detailImg}
       name={detailName}
       description={detailDescription}

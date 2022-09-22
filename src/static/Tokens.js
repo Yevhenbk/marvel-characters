@@ -14,7 +14,7 @@ export const Tokens = {
     },
     Typography: {
         H1: {
-            FontSize: '21px',
+            FontSize: '28px',
             FontWeight: '500',
         },
         H2: {

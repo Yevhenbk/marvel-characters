@@ -125,8 +125,8 @@ export const SelectStyled = styled.select`
   background-color: transparent;
   border: none;
   margin: 0;
-  width: 14rem;
-  font-size: 21px;
+  width: 16rem;
+  font-size: 24px;
   color: ${Tokens.Colors.Quinary};
   cursor: pointer;
   outline: none;

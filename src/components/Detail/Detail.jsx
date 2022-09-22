@@ -10,12 +10,21 @@ ParStyled, LinkStyled, CloseIcon, DivStyled } from './DetailStyled'
  */
 
 
-const Detail = ({onClick, img, comics, description, resource, name, onError}) => {
+const Detail = ({onClick, img, comics, description, resource, name, onError, id,
+  cardClassName, detailClassName}) => {
+
+  //* Methods
+
+  // Check if user has a Touch Screen Device
+  const isTouchDevice = () => {  
+    return window.matchMedia("(pointer: coarse)").matches  
+  }  
+  // console.log(isTouchDevice())
 
   //* View Builder
   return (
-    <DetailsStyled >
-      <DetailsCardStyled>
+    <DetailsStyled id={id} className={detailClassName}>
+      <DetailsCardStyled className={cardClassName}>
           <ImgStyled 
           src={img} 
           alt='Heroe image' 
@@ -34,7 +43,7 @@ const Detail = ({onClick, img, comics, description, resource, name, onError}) =>
               <LinkStyled href={resource} target='_blank'>{comics}</LinkStyled>
             </DivStyled> 
           </div>
-          <CloseIcon onClick={onClick} />
+          {isTouchDevice() ? <CloseIcon onClick={onClick} /> : <></>}
       </DetailsCardStyled>
     </DetailsStyled>
   )
@@ -42,13 +51,16 @@ const Detail = ({onClick, img, comics, description, resource, name, onError}) =>
 
 //* Define components PropTypes
 Detail.propTypes = {
+  id: PropTypes.string,
   onClick: PropTypes.func,
   img: PropTypes.string,
   comics: PropTypes.string,
   description: PropTypes.string,
   resource: PropTypes.string,
   name: PropTypes.string,
-  onError: PropTypes.func
+  onError: PropTypes.func,
+  detailClassName: PropTypes.string,
+  cardClassName: PropTypes.string
 }
 
 //* Export component

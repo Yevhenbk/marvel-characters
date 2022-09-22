@@ -18,7 +18,7 @@ export const ModalStyled = styled.div`
     width: 100vw;
     height: 100vh;
     background: #151515a7;
-    z-index: 8;
+    z-index:8;
 `;
 
 
@@ -33,11 +33,13 @@ export const WrapperStyled = styled.form`
     overflow: hidden;
     background: ${Tokens.Colors.Quaternary};
     color: ${Tokens.Colors.Primary};
+
+        
 `;
 
 
 //* Styled Button
-export const ButtonStyled = styled.button`
+export const ButtonStyled = styled.input`
     background: ${Tokens.Colors.Teritary};
     color: ${Tokens.Colors.Primary};
     font-size: 18px;

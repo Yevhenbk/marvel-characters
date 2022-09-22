@@ -14,6 +14,16 @@ function Modal() {
   const [isClosed, setIsClosed ] = useState(false)
 
   //* Methods
+
+  // When the user clicks anywhere outside of the modal, close it
+  window.onclick = function(event) {
+    const modal = document.getElementById('modal')
+
+    if (event.target === modal) {
+      setIsClosed(false)
+    }
+  }
+
   useEffect(() => {
     // Setting isClosed to true onload in order to make
     // the function below to work
@@ -29,10 +39,8 @@ function Modal() {
 
   //* View Model
   return (
-    <>
-    {isClosed ? 
-    <ModalStyled>
-        <WrapperStyled>
+      <ModalStyled className={isClosed ? 'show' : 'closed'} id='modal'>
+        <WrapperStyled className={isClosed ? 'wrapper-show' : 'wrapper-closed'}>
             <HeaderStyled>Hey, there &#128075;</HeaderStyled>
             <ParStyled>Welcome to Marvel Characters! This is a project developed for Appspace assignment, and if
                 you are reading this you are probably about to review my code :) Before you do it I would like to 
@@ -44,11 +52,9 @@ function Modal() {
                 in some cases icons from react-icons library are used.
             </ParStyled>
             <ParStyled>Enjoy!</ParStyled>
-            <ButtonStyled onClick={() => setIsClosed(false)}>Understood</ButtonStyled>
+            <ButtonStyled type='button' value='Understood' onClick={() => setIsClosed(false)} />
         </WrapperStyled>
-    </ModalStyled> : <></>}
-    </>
-    
+    </ModalStyled>
   )
 }
 
