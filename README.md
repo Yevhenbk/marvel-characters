@@ -25,6 +25,5 @@ npm start #runs the app in the development mode
 
 ## Page preview
 
-![Preview image 1](https://github.com/Yevhenbk/marvel-characters/blob/main/src/static/img/preview_1.png)
 ![Preview image 2](https://github.com/Yevhenbk/marvel-characters/blob/main/src/static/img/preview_2.png)
 ![Preview image 3](https://github.com/Yevhenbk/marvel-characters/blob/main/src/static/img/preview_3.png)
