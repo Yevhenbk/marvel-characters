@@ -2,7 +2,7 @@
 
 This project is an app that is connected to an external APIs and showing the result from it, which is marvel characters. 
 It is developed for Appspace assignment, using React js with styled-components; for generating a hash for API route md5 from crypto-js library is used; for API calls
- - axios; the rest of the components are developed from scratch and in some cases icons from react-icons library are used.
+ -- axios; the rest of the components are developed from scratch and in some cases icons from react-icons library are used.
  
  The app itself is single-page represented in two screens:
   Listing, which is the main and only component passed to the App.js where you can find all the functionality related to API calls, filtering data, 
