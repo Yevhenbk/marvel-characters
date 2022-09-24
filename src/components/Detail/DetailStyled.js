@@ -78,7 +78,8 @@ export const ImgStyled = styled.img`
 
 //* Styled Header
 export const HeaderStyled = styled.h1`
-    font-size: 28px;
+    font-size: ${Tokens.Typography.H1.FontSize};
+    font-weight: ${Tokens.Typography.H1.FontWeight};
     padding: 1rem .75rem;
     border-top: 2px solid ${Tokens.Colors.Teritary};
     border-bottom: 2px solid ${Tokens.Colors.Teritary};
@@ -90,7 +91,7 @@ export const HeaderStyled = styled.h1`
 //* Styled Paragraph
 export const ParStyled = styled.p`
     color: ${Tokens.Colors.Primary};
-    font-size: 18px;
+    font-size: ${Tokens.Typography.P.FontSize};
     padding: 0 .5rem;
 `;
 

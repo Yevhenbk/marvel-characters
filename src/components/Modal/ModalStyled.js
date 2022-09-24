@@ -42,10 +42,10 @@ export const WrapperStyled = styled.form`
 export const ButtonStyled = styled.input`
     background: ${Tokens.Colors.Teritary};
     color: ${Tokens.Colors.Primary};
-    font-size: 18px;
+    font-size: ${Tokens.Typography.Input.FontSize};
     border: none;
     font-style: italic;
-    font-weight: 400;
+    font-weight: ${Tokens.Typography.Input.FontWeight};
     padding: .6rem 2.75rem;
     text-align: center;
     margin: 1rem;
@@ -57,15 +57,15 @@ export const ButtonStyled = styled.input`
 
 
 //* Styled Header
-export const HeaderStyled = styled.h1`
-    font-size: 21px;
+export const HeaderStyled = styled.h2`
+    font-size: ${Tokens.Typography.H2.FontSize};
     margin-left: 1rem;
 `;
 
 
 //* Styled Par
 export const ParStyled = styled.p`
-    font-size: 18px;
+    font-size: ${Tokens.Typography.P.FontSize};
     margin: 1rem;
     color: ${Tokens.Colors.Quinary};
 `;

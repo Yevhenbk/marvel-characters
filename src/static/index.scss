@@ -20,15 +20,6 @@ body {
 .scroll {
   overflow-y: scroll;
 }
-// .wrapper-closed {
-//   animation: scaleDown .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-// }
-
-// .wrapper-show {
-//   opacity:0;
-//   animation: scaleUp .35s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-// }
-
 .show {
   animation: fadeIn .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
   transform:scale(1);
@@ -39,10 +30,10 @@ body {
 }
 .closed {
   transform:scale(0);
-  animation: fadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-  .wrapper-closed {
-    animation: scaleDown .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
-  }
+  // animation: fadeOut .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+  // .wrapper-closed {
+  //   animation: scaleDown .5s cubic-bezier(0.165, 0.840, 0.440, 1.000) forwards;
+  // }
 }
 
 

@@ -142,9 +142,9 @@ export const OptionStyled = styled.option`
 
 //* Styled Span
 export const SpanStyled = styled.span`
-  font-size: 18px;
+  font-size: ${Tokens.Typography.Span.FontSize};
   padding-right: 1rem;
-  font-weight: bold;
+  font-weight: ${Tokens.Typography.Span.FontWeight};
   font-style: italic;
   text-transform: uppercase;
   color: ${Tokens.Colors.Quinary};

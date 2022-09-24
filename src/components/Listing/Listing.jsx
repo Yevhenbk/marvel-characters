@@ -5,16 +5,16 @@ import Card from '../Card/Card';
 import SearchBar from '../SearchBar/SearchBar';
 import Modal from '../Modal/Modal';
 import { DivStyled, OptionStyled, SectionStyled, SelectStyled, SpanStyled, SearchIcon, CloseIcon, 
-    LoaderStyled, CenteredDivStyled } from './FetchCharactersStyled';
+LoaderStyled, CenteredDivStyled } from './ListingStyled';
 
 
 
 /**
- * ! Define the FetchCharacters component
+ * ! Define the Listing component
  */
 
 
-const FetchCharacters = () => {
+const Listing = () => {
 
     // Defining states
     const [characters, setCharacters] = useState([])
@@ -56,23 +56,23 @@ const FetchCharacters = () => {
         const hash = getHash(ts, privateKey, apiKey)
         
         // Define requests
-        const request_1 = 0
-        const request_2 = 100
-        const request_3 = 200
-        const request_4 = 300
-        const request_5 = 400
+        // const request_1 = 0
+        // const request_2 = 100
+        // const request_3 = 200
+        // const request_4 = 300
+        // const request_5 = 400
         const request_6 = 500
-        const request_7 = 600
-        const request_8 = 700
-        const request_9 = 800
-        const request_10 = 900
+        // const request_7 = 600
+        // const request_8 = 700
+        // const request_9 = 800
+        // const request_10 = 900
         
         setLoading(true)
         axios.get(`${baseUrl}?ts=${ts}&apikey=${apiKey}&hash=${hash}&limit=100&offset=${request_6}`).then(res => {
             setCharacters(res.data.data.results)
             setLoading(false)
             setTimeout(() => {setShow(true)}, 1000) 
-            console.log(res.data.data.results)
+            // console.log(res.data.data.results)
         }).catch(error => console.log(error))
         }, [])
 
@@ -126,4 +126,4 @@ const FetchCharacters = () => {
 }
 
 //* Export component
-export default FetchCharacters;
+export default Listing;

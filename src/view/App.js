@@ -1,12 +1,21 @@
-import FetchCharacters from '../components/FetchCharacters/FetchCharacters';
+import Listing from '../components/Listing/Listing';
+
+
+
+/**
+ * ! Define the Sample View
+ */
 
 
 function App() {
+
+  //* View builder
   return (
     <div className="App">
-      <FetchCharacters />
+      <Listing />
     </div>
   );
 }
 
+//*Export component
 export default App;

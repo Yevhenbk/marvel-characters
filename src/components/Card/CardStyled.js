@@ -42,9 +42,9 @@ export const ImgStyled = styled.img`
 `
 
 //* Styled Title
-export const TitleStyled = styled.h3`
-  font-size: 21px;
-  font-weight: 500;
+export const TitleStyled = styled.h2`
+  font-size: ${Tokens.Typography.H2.FontSize};
+  font-weight: ${Tokens.Typography.H2.FontWeight};
   text-align: left;
   padding-left: .5rem;
   padding-top: .5rem;
@@ -66,10 +66,10 @@ export const WrapperStyled = styled.div`
 export const ButtonStyled = styled.button`
     background: ${Tokens.Colors.Teritary};
     color: ${Tokens.Colors.Primary};
-    font-size: 14px;
+    font-size: ${Tokens.Typography.CardButton.FontSize};
     border: none;
     font-style: italic;
-    font-weight: 400;
+    font-weight: ${Tokens.Typography.CardButton.FontWeight};
     padding: .6rem 2.75rem;
     text-align: right;
     clip-path: polygon(
